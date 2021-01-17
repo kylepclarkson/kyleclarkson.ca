@@ -1,0 +1,20 @@
+body {
+    font: 20px "Montserrat", sans-serif;
+    line-height: 1.8;
+    padding-top: 60px;
+}
+
+.masthead#home {
+    background-color: #0e54eb;
+    color: aliceblue;
+}
+
+hr.divider {
+    max-width: 10.25rem;
+    border-width: 0.4rem;
+    border-color: #e4c642;
+}
+
+.post {
+    padding-left: 40px;
+}

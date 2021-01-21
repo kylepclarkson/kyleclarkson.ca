@@ -27,12 +27,13 @@ class Article(models.Model):
 
     title =             models.CharField(max_length=200, default=None)
     description =       models.CharField(max_length=500, default=None)
+    month_published =   models.CharField(max_length=2, default=None)
     year_published =    models.CharField(max_length=5, default=None)
     article_type =      models.CharField(max_length=2,
                                          choices=ARTICLE_TYPE_CHOICES,
                                          default=OTHER)
     publisher =         models.CharField(max_length=200, blank=True)
-    authors =           models.ManyToManyField(Author)
+    authors =           models.ManyToManyField(Author,)
     file =              models.FileField(blank=True, null=True,
                                          upload_to='research/%Y/')
     link =              models.URLField(max_length=200, blank=True)

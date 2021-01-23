@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-lg-10">
                     <h1>{{ post.title }}</h1>
-                    <p class="date">Written on: {{ post.date_created|date:"D d M Y" }} </p>
+                    <p class="date">Written on: {{ post.date_created}} </p>
                     {% if post.date_created != post.date_modified %}
                         <p class="date">Last modified: {{ post.date_modified }}</p>
                     {% endif %}

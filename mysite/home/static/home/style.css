@@ -15,6 +15,13 @@ hr.divider {
     border-color: #e4c642;
 }
 
+#footer-divider {
+    max-width: 20rem;
+    border-width: 0.2rem;
+    border-color: aliceblue;
+}
+
+
 .post {
     padding-left: 40px;
 }

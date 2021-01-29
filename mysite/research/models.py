@@ -1,5 +1,7 @@
 from django.db import models
 
+import django.utils.timezone
+
 # Create your models here.
 
 
@@ -29,8 +31,7 @@ class Article(models.Model):
 
     title =             models.CharField(max_length=200, )
     description =       models.CharField(max_length=500, blank=True,)
-    month_published =   models.CharField(max_length=2, blank=True,)
-    year_published =    models.CharField(max_length=5, blank=True,)
+    date_published =    models.DateField(editable=True)
     article_type =      models.CharField(max_length=2,
                                          choices=ARTICLE_TYPE_CHOICES,
                                          default=OTHER)
@@ -41,7 +42,7 @@ class Article(models.Model):
     link =              models.URLField(max_length=200, blank=True)
 
     def __str__(self):
-        return f'{self.title}, {self.year_published}, {[str(author) for author in self.authors.all()]}'
+        return f'{self.title}, {[str(author) for author in self.authors.all()]}'
 
 
 

@@ -23,7 +23,7 @@ Research - Kyle Clarkson
             {% for article in object_list %}
             {% if article.article_type == 'PU' %}
             <div class="row">
-                <h3><a href="{% url 'research:research-detail' article.pk %}">{{ article.title }}</a></h3>
+                <h3><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h3>
             </div>
             <div class="row">
                 <p><small>Published: {{ article.date_published|date:"F, Y"}}</small></p>

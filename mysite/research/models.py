@@ -39,7 +39,7 @@ class Article(models.Model):
     authors =           models.ManyToManyField(Author,)
     file =              models.FileField(blank=True, default='',
                                          upload_to='research/%Y/')
-    link =              models.URLField(max_length=200, blank=True)
+    link =              models.URLField(max_length=1000, blank=True)
 
     def __str__(self):
         return f'{self.title}, {[str(author) for author in self.authors.all()]}'

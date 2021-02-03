@@ -28,24 +28,20 @@
                             <small>
                                 Tags:
                                 {% for tag in post.tags.all %}
-                                    <a href="{% url 'blog:blog-list-by-tag' tag.slug %}"> {{ tag.name }}</a>
+                                    <a href="{% url 'blog:blog-list-by-tag' tag.slug %}">
+                                        {{ tag.name }}
+                                    </a>
+                                    {% if not forloop.last %},{% endif %}
                                 {% endfor %}
                             </small>
-
-<!--                            <small>Written on:-->
-<!--                                {{ post.date_created|date:"F j, Y" }}-->
-<!--                            </small>-->
-
-<!--                            {% if post.date_created != post.date_modified %}-->
-<!--                                <br/>-->
-<!--                                <small>-->
-<!--                                    Last modified: {{ post.date_modified|date:"F j, Y - g:i A" }}-->
-<!--                                </small>-->
-<!--                            {% endif %}-->
-                            <h5>{{ post.snippet|safe|truncatewords:30 }}</h5>
+                            <p>
+                                Published {{ post.publish}}
+                            </p>
+                            <h5>{{ post.body|safe|truncatewords:30 }}</h5>
                             <hr>
                         </div>
                     {% endfor %}
+                    {% include 'home/pagination.html' with page=posts %}
                 </div>
             </div>
         </div>

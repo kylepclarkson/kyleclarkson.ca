@@ -27,13 +27,14 @@
                                 <a href="{% url 'blog:blog-detail' post.pk %}">{{ post.title }}</a>
                             </h2>
                             <small>Written on:
-                                {{ post.date_created|date:"d M Y" }}
-                                {{ post.date_created|time:"h:i a" }}
+                                {{ post.date_created|date:"F j, Y" }}
                             </small>
 
                             {% if post.date_created != post.date_modified %}
-                                <br/><small>Last modified: {{ post.date_modified|date:"d M Y" }}
-                                {{ post.date_modified|time:"h:i a" }}</small>
+                                <br/>
+                                <small>
+                                    Last modified: {{ post.date_modified|date:"F j, Y - g:i A" }}
+                                </small>
                             {% endif %}
                             <h5>{{ post.snippet|safe }}</h5>
                             <hr>

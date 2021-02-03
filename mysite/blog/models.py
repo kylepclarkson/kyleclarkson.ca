@@ -7,15 +7,19 @@ from taggit.managers import TaggableManager
 from ckeditor.fields import RichTextField
 
 
-class PublishManager(models.Manager):
+class PublishedManager(models.Manager):
     """ Custom manager that only returns published posts. """
 
     def get_queryset(self):
-        return super(PublishManager, self).get_queryset().filter(status='published')
+        return super(PublishedManager, self).get_queryset().filter(status='published')
 
 
 class Post(models.Model):
     """ Blog post """
+
+    # set query managers.
+    objects = models.Manager()  # default
+    published = PublishedManager()
 
     STATUS_CHOICES = (
         ('draft', 'Draft'),
@@ -35,8 +39,8 @@ class Post(models.Model):
         ordering = ('-publish',)
 
     def __str__(self):
-        return f'{self.title}, {self.publish}'
+        return f'{self.title}, {self.status}'
 
     def get_absolute_url(self):
-        # TODO
-        return reverse('')
+        return reverse('blog:blog-detail',
+                       args=[self.publish.year, self.publish.month, self.publish.day, self.slug])

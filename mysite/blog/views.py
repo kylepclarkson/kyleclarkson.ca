@@ -10,7 +10,7 @@ def blog_list(request, tag_slug=None):
     Get all published posts using tag_slug to filter result.
     """
 
-    object_list = Post.publish.all()
+    object_list = Post.published.all()
     tag = None
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
@@ -38,6 +38,7 @@ def blog_list(request, tag_slug=None):
     return render(request,
                   'blog/blog_list.html',
                   context)
+
 
 def blog_detail(request, year, month, day, post):
     """ Get specific post using slug. """

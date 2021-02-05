@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block styles %}
-    <!-- Custom styles for this template -->
+    {# Custom styles for this template #}
     <link rel="stylesheet" type="text/css" href="{% static "home/style.css" %}">
 {% endblock %}
 
@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Masthead -->
+    {# Masthead #}
     <header class="masthead vh-100" id="home">
         <div class="container vh-100">
             <div class="row vh-100 align-items-center justify-content-center text-center">
@@ -29,9 +29,9 @@
             </div>
         </div>
     </header>
-    <!-- End masthead -->
+    {# End Masthead #}
 
-    <!-- About section -->
+    {# About Section #}
     <section>
         <div class="container vh-50 py-4 bg-light">
             <div class="row align-items-center justify-content-center text-center">
@@ -39,7 +39,6 @@
                     <h2>About Me</h2>
                     <p>
                         I'm currently finishing a Master's of computer science at the University of British Columbia
-                        (UBC)
                         located
                         in Vancouver, Canada. I am a member of the
                         <a target="_blank" href="https://www.cs.ubc.ca/labs/beta/">Bioinformatics, Empirical, and Theoretical
@@ -49,15 +48,14 @@
                         <a target="_blank" href="https://www.cs.ubc.ca/~will/">Will Evans</a>.
                     </p>
                     <p>
-                        Before my time at UBC I completed an undergraduate honors degree at Brandon University (BU)
+                        Before my time at UBC I completed an undergraduate honors degree at Brandon University
                         where I
                         double majored in mathematics and computer science.
-                        While at BU I worked with <a target="_blank" href="https://people.brandonu.ca/lic/">Chenkuan Li</a>
+                        Here I worked with <a target="_blank" href="https://people.brandonu.ca/lic/">Chenkuan Li</a>
                         and <a target="_blank" href="https://people.brandonu.ca/srivastavag/">Gautam Sriviastava</a> on the use of
                         generalized functions
                         to define fractional derivatives and integrals and location prediction of Twitter users during
-                        the
-                        fall solar eclipse of 2017.
+                        the solar eclipse of 2017.
                     </p>
 
                     <p>
@@ -68,8 +66,9 @@
             </div>
         </div>
     </section>
+    {# End about section #}
 
-    <!-- Projects section -->
+    {# Projects section #}
     <section>
         <div class="container vh-50 py-4">
             <div class="row vh-50 align-items-center justify-content-center text-center">
@@ -90,9 +89,9 @@
             </div>
         </div>
     </section>
-    <!-- End projects section -->
+    {# End projects section #}
 
-    <!-- Contact section -->
+    {# Contact section #}
     <section>
         <div class="container vh-50 py-4 bg-light">
             <div class="row vh-50 align-items-center justify-content-center text-center">
@@ -109,5 +108,5 @@
             </div>
         </div>
     </section>
-    <!-- End contact section -->
+    {# End contact section #}
 {% endblock %}

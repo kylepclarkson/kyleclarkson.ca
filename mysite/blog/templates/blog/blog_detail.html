@@ -13,12 +13,11 @@
         Blog - Kyle Clarkson
     {% endif %}
 {% endblock %}
-
 {% block content %}
     <section>
-        <div class="container vh-50 py-4">
+        <div class="container py-4">
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-10 vh-100">
                     <h1>{{ post.title }}</h1>
                     <small>
                         Tags:
@@ -43,6 +42,6 @@
                 </div>
             </div>
         </div>
-    </section>
+{#    </section>#}
 
 {% endblock %}

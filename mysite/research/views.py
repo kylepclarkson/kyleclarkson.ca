@@ -1,24 +1,28 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from .models import Article, Author
+from .models import Article
 
 # Create your views here.
 
 
-class ResearchIndex(ListView):
+def research_list(request):
     """ Get research publication and articles, sorted by date. """
-    model = Article
-    template_name = 'research/article.html'
-    ordering = ['-date_published'] # TODO Change to date published.
 
-class ResearchPostDetail(DetailView):
+    object_list = Article.published.all()
+    # publication_posts = object_list.filter(article_type__equal='publication')
+    # report_post = object_list.filter(article_type__equal = 'report')
 
-    model = Article
-    template_name = 'research/article_detail.html'
+    context = {
+        'posts': object_list
+    }
 
-    def research_post_detail_view(request, pk):
-        post = get_o
+    return render(request,
+                  'research/article_list.html',
+                  context)
+
+
+
 
 
 

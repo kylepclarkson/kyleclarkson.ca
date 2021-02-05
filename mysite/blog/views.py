@@ -5,6 +5,7 @@ from taggit.models import Tag
 
 from .models import Post
 
+
 def blog_list(request, tag_slug=None):
     """
     Get all published posts using tag_slug to filter result.
@@ -42,6 +43,8 @@ def blog_list(request, tag_slug=None):
 
 def blog_detail(request, year, month, day, post):
     """ Get specific post using slug. """
+    print(f'post_detail called')
+    print(f'post: {post}')
     post = get_object_or_404(Post,
                              slug=post,
                              status='published',
@@ -57,6 +60,6 @@ def blog_detail(request, year, month, day, post):
                   'blog/blog_detail.html',
                   context)
 
-
+# TODO implement blog  search view
 
 

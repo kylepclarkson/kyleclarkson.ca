@@ -17,8 +17,9 @@ def blog_list(request, tag_slug=None):
         tag = get_object_or_404(Tag, slug=tag_slug)
         object_list = object_list.filter(tags__in=[tag])
 
-    # Display 8 posts per page.
-    paginator = Paginator(object_list, 2)
+    # Display 5 posts per page.
+    POSTS_PER_PAGE = 5
+    paginator = Paginator(object_list, POSTS_PER_PAGE)
     # The page the user is currently viewing.
     page = request.GET.get('page')
     try:

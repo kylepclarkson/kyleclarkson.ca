@@ -16,25 +16,31 @@
 {% block content %}
     {# ResearchPosts/Articles #}
     <section>
-        <div class="container py-4">
+        <div class="container py-4 d-flex flex-column min-vh-100">
             <h2><strong>Publications</strong></h2>
             <div class="row">
-                <div class="col-lg-12 vh-100">
+                <div class="col-lg-12">
                     <div class="col-lg-12">
                         {# Display publications #}
                         {% for article in posts %}
                             {% if article.article_type == 'publication' %}
                                 <div class="row">
-                                    <h3><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h3>
+                                    <h2>
+                                        <a href="{{ article.link }}" target="_blank">{{ article.title }}</a>
+                                    </h2>
                                 </div>
                                 <div class="row">
                                     <small>Published: {{ article.date_published|date:"F, Y" }}</small>
                                 </div>
                                 <div class="row">
+                                <p>
                                     <small>{{ article.publisher }}</small>
+                                </p>
                                 </div>
                                 <div class="row">
-                                    <p>{{ article.description }}</p>
+                                    <h5>
+                                        {{ article.description }}
+                                    </h5>
                                 </div>
                                 <hr>
                             {% endif %}

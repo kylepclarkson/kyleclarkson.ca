@@ -28,7 +28,9 @@ SECRET_KEY = 'fkm%&@279mr++!xb+#6=3t#61#rdwd$e$aw3j$#261$m19-31b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -43,7 +45,7 @@ INSTALLED_APPS = [
     # ====
     'blog.apps.BlogConfig',
     'home',
-    'research',
+    'research.apps.ResearchConfig',
     'taggit',
     'ckeditor',
 ]
@@ -88,7 +90,7 @@ DATABASES = {
         'NAME': 'website_db',
         'USER': 'postgres',
         'PASSWORD': 'JamesIsaac322',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '5432'
     }
 }
@@ -132,11 +134,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'boot'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 

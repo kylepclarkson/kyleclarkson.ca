@@ -48,7 +48,10 @@ class Article(models.Model):
                                          choices=STATUS_CHOICES,
                                          default='draft')
     publisher =         models.CharField(max_length=200, blank=True)
-    authors =           models.ManyToManyField(Author,)
+    # authors =           models.ManyToManyField(Author,)
+    # Issue: Need "through" model
+    # https://stackoverflow.com/questions/60625639/manytomanyfield-breaking-in-admin-screens-and-shouldnt-be
+    # https://docs.djangoproject.com/en/3.1/topics/db/models/#extra-fields-on-many-to-many-relationships
     link =              models.URLField(max_length=1000, blank=True)
 
     class Meta:

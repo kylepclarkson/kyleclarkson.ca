@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'taggit',
+    'ckeditor',
+    'ckeditor_uploader',
+
     'main.apps.MainConfig',
     'blog.apps.BlogConfig',
 ]
@@ -136,6 +140,10 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 # where media files will be uploaded to.
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media_root/')
+
+
+# === CK editor ===
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

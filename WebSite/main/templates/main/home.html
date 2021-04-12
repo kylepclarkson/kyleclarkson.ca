@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    {# === Hero === #}
+    <header class="p-5 text-center bg-image shadow-2-strong"
+            style="background-image: url({% static '/images/c1.jpg' %}); height: 1000px;">
+
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white text-center">
+                    <h1 class="mb-3">Welcome, Boozhoo</h1>
+                    <h4 class="mb-3 mx-5">My name is Kyle and, among other things, I'm a programmer.</h4>
+                    <a class="btn btn-outline-light btn-lg m-1" href="#about" role="button">My skills</a>
+                    <a class="btn btn-outline-light btn-lg m-1" href="#projects" role="button">Projects</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    {# === Hero === #}
+
+    <main>
+        <div class="container">
+            {# === About === #}
+            <section id="about" class="text-center">
+                <h3 class="my-5"><strong>A little about me.</strong></h3>
+                <div class="row">
+                    {# col 1/2 #}
+                    <div class="col-md-6 mb-4">
+                        <img src="" alt="its me!" class="rounded-circle shadow-1-strong mb-4">
+                        <p>
+                            I recently finished a Master's of Computer Science degree at the University of British
+                            columbia and am currently looking for work as developer!
+                            <a href="#">More</a>.
+                        </p>
+                        <!-- Twitter -->
+                        <a class="btn btn-primary btn-floating m-1"
+                           style="background-color: #55acee;"
+                           href="#!"
+                           role="button"
+                        ><i class="fab fa-twitter"></i
+                        ></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-primary btn-floating m-1"
+                           style="background-color: #ac2bac;"
+                           href="#!"
+                           role="button"
+                        ><i class="fab fa-instagram"></i
+                        ></a>
+                    </div>
+                    {# col 1/2 #}
+
+                    <div class="col-md-6 mb-4">
+                        {# row #}
+                        <p><strong>Proficient</strong></p>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <i class="fab fa-java fa-3x m-2"></i>
+                                <p>Java</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <i class="fab fa-python fa-3x m-2"></i>
+                                <p>Python</p>
+                            </div>
+                        </div>
+
+                        {# row #}
+                        <p><strong>Used A Lot</strong></p>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <i class="fab fa-html5 fa-3x m-2"></i>
+                                <p>Html</p>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <i class="fab fa-bootstrap fa-3x m-2"></i>
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <img class="fab fa-3x mt-3" src="{% static 'images/django.svg' %}" alt="">
+                                <p class="mt-3">Django</p>
+                            </div>
+                        </div>
+
+                        {# row #}
+                        <p><strong>Learning</strong></p>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <i class="fab fa-react fa-3x m-2"></i>
+                                <p>React</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <i class="fab fa-js fa-3x m-2"></i>
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {# === About === #}
+
+            {# === Contact Form === #}
+            <section id="contact" class="text-center">
+                <h3 class="my-5"><strong>Contact me</strong></h3>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <form>
+                            <!-- Name input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form4Example1" class="form-control"/>
+                                <label class="form-label" for="form4Example1">Name</label>
+                            </div>
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="form4Example2" class="form-control"/>
+                                <label class="form-label" for="form4Example2"
+                                >Email address</label
+                                >
+                            </div>
+
+                            <!-- Message input -->
+                            <div class="form-outline mb-4">
+                                <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                                <label class="form-label" for="form4Example3">Message</label>
+                            </div>
+
+                            <!-- Checkbox -->
+                            <div class="form-check d-flex justify-content-center mb-4">
+                                <input class="form-check-input mr-2" type="checkbox" value="" id="form4Example4" checked/>
+                                <label class="form-check-label" for="form4Example4">
+                                    Send me a copy of this message
+                                </label>
+                            </div>
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            {# === Contact Form === #}
+
+
+        </div>
+    </main>
+
+{% endblock %}

@@ -4,21 +4,23 @@
 {% endblock %}
 
 {% block content %}
-    {# === Hero === #}
-    <header class="p-5 text-center bg-image shadow-2-strong"
-            style="background-image: url({% static '/images/hero-bg.jpg' %}); height: 1000px;">
 
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.5);">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-white text-center">
-                    <h1 class="mb-3">Welcome, Boozhoo.</h1>
-                    <h4 class="mb-3 mx-5">I'm Kyle and, among other things, I'm a programmer.</h4>
-                    <a class="btn btn-outline-light btn-lg m-1" href="#about" role="button">My skills</a>
-                    <a class="btn btn-outline-light btn-lg m-1" href="#projects" role="button">Projects</a>
-                </div>
-            </div>
+    {# === Hero === #}
+    <div class="d-flex align-items-center justify-content-center min-vh-100" style="
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({% static '/images/hero-bg.jpg' %});
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            ">
+
+        <div class="text-white text-center">
+            <h1 class="mb-3">Welcome, Boozhoo.</h1>
+            <h4 class="mb-3 mx-5">I'm Kyle and, among other things, I'm a programmer.</h4>
+            <a class="btn btn-outline-light btn-lg m-1" href="#about" role="button">My skills</a>
+            <a class="btn btn-outline-light btn-lg m-1" href="#projects" role="button">Projects</a>
         </div>
-    </header>
+    </div>
     {# === Hero === #}
 
     <main>

@@ -27,12 +27,19 @@ def home(request):
                 message=message
             )
 
+            receivers = ['admin@email.com']
+            if comment_form.cleaned_data['copy_sent']:
+                receivers.append(sender)
+
             # send email
-            send_mail(f'Website email - general from {name}', message, sender, ['kyleclarkson17@hotmail.com',])
+            send_mail(f'Website email - general from {name}', message, sender, receivers)
             messages.add_message(request,
                                  messages.SUCCESS,
                                  'Thank you for your email!',
                                  extra_tags='bg-success text-white')
+
+            # clear form
+            comment_form = CommentForm()
     else:
         comment_form = CommentForm()
 
@@ -40,7 +47,6 @@ def home(request):
         'name': 'Hello',
         'comment_form': comment_form
     }
-    print('Context:', context)
 
     return render(request, 'main/home.html', context=context)
 

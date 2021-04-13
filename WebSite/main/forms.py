@@ -8,7 +8,11 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['name', 'email', 'message']
+        fields = ['name', 'email', 'message', 'copy_sent']
+
+        labels = {
+            'copy_sent': 'Send me a copy'
+        }
 
         widgets = {
             'name': forms.TextInput(attrs={
@@ -26,6 +30,11 @@ class CommentForm(forms.ModelForm):
                 'placeholder': 'Message',
                 'required': True,
             }),
+            'copy_sent': forms.CheckboxInput(attrs={
+                'class': 'form-check-input mx-2',
+                'required': False,
+                'label': 'Send me a copy'
+            })
         }
 
 

@@ -1,4 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Hello this is the projects page.</h2>
+    {# === Hero === #}
+    <div class="d-flex align-items-center justify-content-center" style="
+            background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(5, 0, 255, 0.5));
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            height: 30rem;
+            ">
+
+        <div class="text-white text-center">
+            <h1 class="mb-3">Projects I've worked on,</h1>
+            <h2>or those currently in the works.</h2>
+        </div>
+    </div>
+    {# === Hero === #}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                Project One
+            </div>
+            <div class="col-lg-4 col-md-6">
+                Project two
+            </div>
+            <div class="col-lg-4 col-md-6">
+                Project three
+            </div>
+            <div class="col-lg-4 col-md-6">
+                Project four
+            </div>
+            <div class="col-lg-4 col-md-6">
+                Project five
+            </div>
+            <div class="col-lg-4 col-md-6">
+                Project six
+            </div>
+        </div>
+    </div>
 {% endblock %}

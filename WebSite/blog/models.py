@@ -46,3 +46,12 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog:blog-detail',
                        args=[self.publish.year, self.publish.month, self.publish.day, self.slug])
+
+
+class Comment(models.Model):
+    """ A comment from a user, perhaps in response to a blog post. """
+    name = models.CharField(max_length=100, null=False)
+    email = models.EmailField(max_length=100, null=False)
+    message = models.TextField(null=False)
+    # Uses title of blog post if comment was regarding the post.
+    post = models.ForeignKey(Post, null=True, on_delete=models.SET_NULL)

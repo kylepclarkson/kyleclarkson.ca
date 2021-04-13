@@ -1,4 +1,127 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    | About
+{% endblock %}
 {% block content %}
-    <h2>Hello this is the about page.</h2>
+    {# === Hero === #}
+    <div class="d-flex align-items-center justify-content-center min-vh-100" style="
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({% static '/images/about-hero.jpg' %});
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            ">
+
+        <div class="text-white text-center">
+            <h1 class="mb-3">Nice to meet you.</h1>
+        </div>
+    </div>
+    {# === Hero === #}
+
+    <div class="container">
+        {# === Background === #}
+        <h2 class="text-center my-5">Background</h2>
+        <section>
+            <div class="row">
+                <div class="col-lg-5">
+                    <img src="{% static '/images/canola-field.JPG' %}" alt="canola"
+                         class="img rounded shadow-lg" style="height: 300px;">
+                </div>
+                <div class="col-lg-7 pt-sm-4">
+                    <p>
+                        For nearly three years I have lived in Vancouver, British Columbia while I completed a graduate
+                        degree at the University of British Columbia.
+                        Yet home for me is thousands of miles away in the quaint farming community of the Swan River
+                        Valley in Manitoba where most of my family currently lives.
+                    </p>
+                    <p>
+                        Growing up in a rural community, I spent a lot of my time outdoors. These activities included
+                        camping, quading, snowmobiling, hunting, and fishing among others. I attend Swan River Regional
+                        Secondary School where I played football, rugby, and badminton.
+                    </p>
+                    <p>
+                        I'm an Anishinaabeg Canadian and member of nearby Pine Creek First Nation,
+                        but my family also has its roots in other nations such as England, Ireland, and Norway.
+                        I even have ties back to the MacLean Clan of Scotland!
+                    </p>
+                </div>
+            </div>
+        </section>
+        {# === Background === #}
+
+
+        {# === Education === #}
+        <section>
+            <h2 class="text-center my-5">Education</h2>
+            <div class="row">
+                <div class="col-lg-7 pt-md-2">
+                    <p>
+                        I attended Brandon University (2014-2018) in Brandon, Manitoba where I completed an honours
+                        degree majoring in mathematics and computer science. I had the privilege of working with
+                        <a target="_blank" href="https://people.brandonu.ca/lic/">Chenkuan Li</a>
+                        and <a target="_blank" href="https://people.brandonu.ca/srivastavag/">Gautam Sriviastava</a>
+                        on the use of generalized functions to define fractional derivatives and integrals and location
+                        prediction of Twitter users during the solar eclipse of 2017 respectively.
+                    </p>
+                    <p>
+                        I then moved out west where I recently finished a Master's of Science in computer science at
+                        the university of British Columbia. Working with the wonderful
+                        <a target="_blank" href="https://www.cs.ubc.ca/~will/">Will Evans</a> in the
+                        <a target="_blank" href="https://www.cs.ubc.ca/labs/beta/">Bioinformatics, Empirical,
+                            and Theoretical Algorithmic (BETA) lab</a>
+                        , my thesis pertained to an improved competitive factor for a path finding problem related
+                        to the watchman route problem in computational geometry.
+                    </p>
+                    <p>
+                        I also enrolled in courses that covered topics including human-computer interaction,
+                        artificial intelligence, machine learning, and advanced algorithms. My favourite part
+                        of my time as a graduate student was assisting students learn various topics as a teaching
+                        assistant for serveral courses.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <img src="{% static '/images/city-night.JPG' %}" alt="canola" class="img rounded"
+                         style="height: 300px;">
+                </div>
+            </div>
+        </section>
+        {# === Education === #}
+
+        {# === Interests === #}
+        <section class="mb-5">
+            <h2 class="text-center my-5">Interests</h2>
+            <div class="row">
+                <div class="col-lg-5">
+                    <img src="{% static '/images/tent-peaks.JPG' %}" alt="canola"
+                         class="img rounded"
+                         style="height: 300px;">
+                </div>
+                <div class="col-lg-7">
+                    <p>
+                        I enjoy learning new things. This is in part what is so attractive about software development
+                        to me - there are always new frameworks, languages, and applications to learn! In an effort
+                        to expand my resume, I am currently solidifying my understanding of full-stack web development.
+                        I also enjoy learning history, namely 20th century history, and social problems we currently
+                        face.
+                    </p>
+                    <p>
+                        When I can get away from my computer I like to spent my outside walking, cycling, and
+                        hiking both in the city and in the mountains with friends. These are great opportunities for me
+                        to practice my amateur photography skills (see the pictures this site or my Instagram.)
+                        In the winter time I also like to snowboard!
+                    </p>
+                    <p>
+                        Before the times of COVID and unemployment, I also enjoyed discovering coffee shops, bars, and
+                        music around the city with friends. I've also been known to play guitar, game, and draw when
+                        I can find the time.
+                    </p>
+                </div>
+            </div>
+        </section>
+        {# === Interests === #}
+
+    </div>
+
 {% endblock %}

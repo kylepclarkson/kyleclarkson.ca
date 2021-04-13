@@ -8,6 +8,16 @@ def home(request):
 
 
 class AboutView(TemplateView):
-
+    """ Return the about page. """
     template_name = 'main/about.html'
+
+
+class ProjectsView(TemplateView):
+    """ Return the about page. """
+    template_name = 'main/projects.html'
+
+
+class ResearchView(TemplateView):
+    """ Return the about page. """
+    template_name = 'main/research.html'
 

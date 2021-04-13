@@ -15,7 +15,7 @@
             ">
 
         <div class="text-white text-center">
-            <h1 class="mb-3">Welcome, Boozhoo.</h1>
+            <h1 class="mb-3">Welcome, boozhoo.</h1>
             <h4 class="mb-3 mx-5">I'm Kyle and, among other things, I'm a programmer.</h4>
             <a class="btn btn-outline-light btn-lg m-1" href="#about" role="button">My skills</a>
             <a class="btn btn-outline-light btn-lg m-1" href="#projects" role="button">Projects</a>
@@ -27,7 +27,7 @@
         <div class="container-fluid">
             <div class="container">
                 {# === About === #}
-                <section id="about" class="text-center">
+                <section id="about" class="text-center" style="padding-top: 50px;">
                     <h3 class="py-5"><strong>A little about me.</strong></h3>
                     <div class="row">
                         {# col 1/2 #}
@@ -38,7 +38,8 @@
                             >
                             <p>
                                 I recently finished a Master's of Computer Science degree at the University of British
-                                columbia and am currently looking for work as developer in Vancouver, BC! I also hike, cycle, and play
+                                columbia and am currently looking for work as developer in Vancouver, BC! I also hike,
+                                cycle, and play
                                 guitar when I can find the time.
                                 <a href="{% url 'main:about' %}">More</a>
                             </p>
@@ -114,7 +115,7 @@
         {# === Projects === #}
         <div class="container-fluid">
             <div class="container">
-                <section id="projects" class="text-center">
+                <section id="projects" class="text-center" style="padding-top: 50px;">
 
                     <h3 class="my-5"><strong>Some of my projects.</strong></h3>
 
@@ -179,48 +180,42 @@
                 </section>
             </div>
         </div>
+
         {# === Projects === #}
         <div class="container-fluid">
             <div class="container">
                 {# === Contact Form === #}
-                <section id="contact" class="text-center">
-                    <h3 class="mt-5"><strong>Contact me.</strong></h3>
-                    <p class="mb-5">See something you like here? Send me a message using the form!</p>
+                <section id="contact">
+                    <div class="text-center">
+                        <h3 class="mt-5"><strong>Contact me.</strong></h3>
+                        <p class="mb-5">See something you like here? Send me a message using the form!</p>
+                    </div>
                     <div class="row d-flex justify-content-center">
-                        <div class="col-md-6">
-                            <form>
-                                <!-- Name input -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="form4Example1" class="form-control"/>
-                                    <label class="form-label" for="form4Example1">Name</label>
+                        <div class="col-md-6 mb-5">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="id_name"
+                                           class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="id_name">
                                 </div>
+                                <div class="mb-3">
+                                    <label for="id_email" class="form-label">Email address</label>
+                                    <input type="email"
+                                           class="form-control"
+                                           id="id_email"
+                                           aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="id_message" class="form-label">Message</label>
+                                    <textarea
+                                            rows="5"
+                                            class="form-control"
+                                            id="id_message">
 
-                                <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <input type="email" id="form4Example2" class="form-control"/>
-                                    <label class="form-label" for="form4Example2"
-                                    >Email address</label
-                                    >
+                                    </textarea>
                                 </div>
-
-                                <!-- Message input -->
-                                <div class="form-outline mb-4">
-                                    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                                    <label class="form-label" for="form4Example3">Message</label>
-                                </div>
-
-                                <!-- Checkbox -->
-                                <div class="form-check d-flex justify-content-center mb-4">
-                                    <input class="form-check-input mr-2" type="checkbox" value="" id="form4Example4"
-                                           checked/>
-                                    <label class="form-check-label" for="form4Example4">
-                                        Send me a copy of this message
-                                    </label>
-                                </div>
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block mb-4">
-                                    Send
-                                </button>
+                                <button type="submit" class="btn btn-primary">Send</button>
                             </form>
                         </div>
                     </div>

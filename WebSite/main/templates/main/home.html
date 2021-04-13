@@ -24,7 +24,7 @@
     {# === Hero === #}
 
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid" style="background: whitesmoke">
             <div class="container">
                 {# === About === #}
                 <section id="about" class="text-center" style="padding-top: 50px;">
@@ -113,7 +113,7 @@
         </div>
 
         {# === Projects === #}
-        <div class="container-fluid">
+        <div class="container-fluid" style="background: whitesmoke;">
             <div class="container">
                 <section id="projects" class="text-center" style="padding-top: 50px;">
 
@@ -182,42 +182,20 @@
         </div>
 
         {# === Projects === #}
-        <div class="container-fluid">
+        <div class="container-fluid" style="background: whitesmoke;">
             <div class="container">
                 {# === Contact Form === #}
-                <section id="contact">
+                <section id="contact" style="padding-top: 50px">
                     <div class="text-center">
-                        <h3 class="mt-5"><strong>Contact me.</strong></h3>
+                        <h3><strong>Contact me.</strong></h3>
                         <p class="mb-5">See something you like here? Send me a message using the form!</p>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <div class="col-md-6 mb-5">
+                        <div class="col-md-10 mb-5">
                             <form class="needs-validation" method="POST">
                                 {% csrf_token %}
                                 {{ comment_form }}
-                                {{ name }}
-{#                                <div class="mb-3">#}
-{#                                    <label for="id_name"#}
-{#                                           class="form-label">Name</label>#}
-{#                                    <input type="text" class="form-control" id="id_name">#}
-{#                                </div>#}
-{#                                <div class="mb-3">#}
-{#                                    <label for="id_email" class="form-label">Email address</label>#}
-{#                                    <input type="email"#}
-{#                                           class="form-control"#}
-{#                                           id="id_email"#}
-{#                                           aria-describedby="emailHelp">#}
-{#                                </div>#}
-{#                                <div class="mb-3">#}
-{#                                    <label for="id_message" class="form-label">Message</label>#}
-{#                                    <textarea#}
-{#                                            rows="5"#}
-{#                                            class="form-control"#}
-{#                                            id="id_message">#}
-{##}
-{#                                    </textarea>#}
-{#                                </div>#}
-                                <input id="form-submit-btn" class="btn btn-primary" type="submit"
+                                <input id="form-submit-btn" class="d-flex ms-auto btn btn-primary mt-2" type="submit"
                                    value="Send">
                             </form>
                         </div>

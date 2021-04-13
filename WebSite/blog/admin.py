@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post
+from .models import Post, Comment
 
 
 @admin.register(Post)
@@ -13,3 +13,7 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'publish'  # allows viewing posts based on date.
     ordering = ('status', 'publish')  # ordering of post are by these.
 
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'post', 'message',)

@@ -55,3 +55,4 @@ class Comment(models.Model):
     message = models.TextField(null=False)
     # Uses title of blog post if comment was regarding the post.
     post = models.ForeignKey(Post, null=True, on_delete=models.SET_NULL)
+

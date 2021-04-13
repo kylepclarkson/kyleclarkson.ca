@@ -3,7 +3,7 @@ from django import forms
 from blog.models import Comment
 
 
-class CommentForm(forms.Form):
+class CommentForm(forms.ModelForm):
     """ A comment from a user which may be in response to blog post. """
 
     class Meta:

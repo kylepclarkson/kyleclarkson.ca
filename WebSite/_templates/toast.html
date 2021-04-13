@@ -1,0 +1,15 @@
+{% if messages %}
+    {% for message in messages %}
+        <div aria-live="polite"
+             aria-atomic="true"
+             class="bg-dark">
+            <div class="toast-container position-absolute">
+                <div class="toast position-fixed mt-5 top-0 start-50 translate-middle-x {{ message.extra_tags }}" id="toastMessage">
+                    <div class="toast-body">
+                        {{ message }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

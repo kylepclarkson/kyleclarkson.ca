@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block title %}
+    | Projects
+{% endblock %}
+
 {% block content %}
     {# === Hero === #}
     <div class="d-flex align-items-center justify-content-center" style="
@@ -17,26 +22,87 @@
     </div>
     {# === Hero === #}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                Project One
+    {# projects #}
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">DemoShop</h5>
+                        <p class="card-text">
+                            An online shop that allows small businesses to connect to customers. Using a session-based
+                            cart system, visitors of the website can add products to their carts, enter shipping
+                            details, and pay for their goods via paypal.
+                            The owner of the shop can also track orders, quantities of items, and create single or multi
+                            use coupons whose discounts are applied to entire orders.
+                        </p>
+                        <p class="card-text">
+                            Built using Bootstrap5 and Javascript on the front and Django and Postgres on the back.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                Project two
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">HikeNote</h5>
+                        <p class="card-text">
+                            When traveling into the back country a key planning step is to notify a trusted individual
+                            of your intended route and when you will return.
+                            HikeNote allows registered users to create a trip with start and end times, along with
+                            an itinerary and designated contact. By interacting with the application, users can update
+                            how their trip is going.
+                            If a user fails to confirm they've returned from the trip after the scheduled end time,
+                            HikeNote automatically generates an email to their contact with the updated itinerary of
+                            their trip attached.
+                        </p>
+                        <p class="card-text">
+                            Built using Bootstrap5 on the front and Django and SQLite on the back.
+                        </p>
+
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                Project three
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">This Website</h5>
+                        <p class="card-text">
+                            What better way to understand web development than to attach your very own website to the
+                            skills you learn? This is the third major version of this site which has improved its
+                            front end (it used to be worse!) and how it stores data either statically as
+                            html pages or dynamically in databases.
+                        </p>
+                        <p class="card-text">
+                            Built using Bootstrap5 and Javascript on the front and Django and Postgres on the back.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                Project four
-            </div>
-            <div class="col-lg-4 col-md-6">
-                Project five
-            </div>
-            <div class="col-lg-4 col-md-6">
-                Project six
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">ACDGO Arch Server</h5>
+                        <p class="card-text">
+                            A collaboration between ACDGO systems and the Brandon University computer science department,
+                            my classmates and I developed a system in which users could transfer files from their personal
+                            devices to a server located in their home or business, much how cloud services work today.
+                            This project occurred over an eight month period as an undergraduate and was my first experience
+                            with developing a "real" project.
+                        </p>
+                        <p class="card-text">
+                            Our prototype consisted of an Android app in which users would transfer files to their server
+                            that was powered by Apache's Tomcat framework written in Java.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    {# projects #}
+
+    <h3 class="text-center my-5">
+        For more coding projects, feel free to checkout my
+        <a target="_blank" href="https://github.com/kylepclarkson">github repositories</a>.
+    </h3>
 {% endblock %}

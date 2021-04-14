@@ -52,7 +52,7 @@ def blog_detail(request, year, month, day, post):
     # Issue: adding 'day' value when getting post makes post not found.
     post = get_object_or_404(Post,
                              slug=post,
-                             status='published',
+                             # status='published',
                              publish__year=year,
                              publish__month=month,)
 

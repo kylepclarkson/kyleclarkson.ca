@@ -18,14 +18,18 @@
     <main class="my-4">
         <div class="container">
             <div class="row">
+
                 {# post #}
                 <div class="col-lg-8 mb-4">
+                {% if post.status == 'draft' %}
+                    <h2 class="text-warning my-1 text-center"><strong>Draft</strong></h2>
+                {% endif %}
                     {# title #}
                     <section id="post-title" class="border-bottom mb-4">
                         <img
                                 src="{{ post.image.url }}"
                                 alt="Feature image"
-                                class="img-fluid shadow rounded-3 mb-4"
+                                class="img-fluid shadow rounded-3 mb-4 mx-auto"
                         />
                         <div class="row align-items-start mb-2">
                             <h3>{{ post.title }}</h3>

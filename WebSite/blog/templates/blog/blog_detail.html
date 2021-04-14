@@ -75,7 +75,10 @@
                     {# social share #}
 
                     {# reply form #}
-                    <section id="reply-form">
+                    <section id="reply-form" class="pt-4 mb-4">
+                        <p class="text-center">
+                            <strong>Reply to this article</strong>
+                        </p>
                         <form class="needs-validation" method="POST">
                             {% csrf_token %}
                             {{ comment_form }}

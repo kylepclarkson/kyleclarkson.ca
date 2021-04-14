@@ -47,14 +47,8 @@ def blog_list(request, tag_slug=None):
 
 def blog_detail(request, year, month, day, post):
     """ Get specific post using slug. """
-    print(f'post_detail called')
-    print(f'post: {post}')
-    post = get_object_or_404(Post,
-                             slug=post,
-                             status='published',
-                             publish__year=year,
-                             publish__month=month,
-                             publish__day=day)
+    
+    post = get_object_or_404(Post, slug=post,)
 
     context = {
         'post': post

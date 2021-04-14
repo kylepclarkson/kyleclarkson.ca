@@ -5,6 +5,152 @@
 {% endblock %}
 
 {% block content %}
-    {{ post.title }}
-    post details
+    {# title #}
+    <div class="p-5 text-center">
+        <h1 class="my-1">{{ post.title }}</h1>
+    </div>
+    {# title #}
+
+    <main class="my-4">
+        <div class="container">
+            <div class="row">
+
+                {# post #}
+                <div class="col-lg-8 mb-4">
+                    {# title #}
+                    <section id="post-title" class="border-bottom mb-4">
+                        <img
+                                src="{{ post.image.url }}"
+                                alt="Feature image"
+                                class="img-fluid shadow rounded-3 mb-4"
+                        />
+                        <div class="row align-items-start mb-2">
+                            <h3>{{ post.title }}</h3>
+                        </div>
+                        <div class="row align-items-start mb-2">
+                            <div class="text-lg-left mb-3 m-lg-0">
+                                <p class="my-2">Published <u>{{ post.publish|date:"F j, Y" }}</u></p>
+                                {% if post.created != post.updated %}
+                                    <p>Updated <u>{{ post.updated|date:"F j, Y" }}</u></p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </section>
+                    {# title #}
+
+                    {# content #}
+                    <section id="post-content" class="border-bottom mb-2">
+                        {{ post.body|safe }}
+                    </section>
+                    {# content #}
+
+                    {# social share #}
+                    <section id="social" class="border-bottom py-4 mb-2 text-center">
+                        <p><strong>Share with your friends:</strong></p>
+                        <button
+                                type="button"
+                                class="btn btn-primary m-1"
+                                style="background-color: #3b5998;"
+                        >
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button
+                                type="button"
+                                class="btn btn-primary m-1"
+                                style="background-color: #55acee;"
+                        >
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button
+                                type="button"
+                                class="btn btn-primary m-1"
+                                style="background-color: #0082ca;"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary m-1">
+                            <i class="fas fa-comments mr-2"></i>Add comment
+                        </button>
+                    </section>
+                    {# social share #}
+
+                    {# reply form #}
+                    <section id="reply-form">
+                        <form class="needs-validation" method="POST">
+                            {% csrf_token %}
+                            {{ comment_form }}
+                            <input id="form-submit-btn"
+                                   class="d-flex ms-auto btn btn-primary mt-2"
+                                   type="submit"
+                                   value="Send">
+                        </form>
+                    </section>
+                    {# reply form #}
+                </div>
+                {# post #}
+
+                {# sidebar #}
+                <div class="col-lg-4 mb-4">
+                    <!-- Sidebar -->
+                    <section id="sidebar" class="sticky-top" style="top: 80px;">
+                        <div
+                                class="bg-image ripple mb-4 rounded shadow-2-strong"
+                                data-ripple-color="light"
+                        >
+                            <img src="img/a2.jpg" class="w-100"/>
+                            <a href="#!">
+                                <div
+                                        class="mask"
+                                        style="background-color: rgba(0, 0, 0, 0.4);"
+                                >
+                                    <div
+                                            class="d-flex justify-content-center align-items-center h-100"
+                                    >
+                                        <h4 class="text-white mb-0">
+                                            Only now: <strong><u>best price</u></strong>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="hover-overlay">
+                                    <div
+                                            class="mask"
+                                            style="background-color: rgba(251, 251, 251, 0.2);"
+                                    ></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div
+                                class="bg-image ripple rounded shadow-2-strong"
+                                data-ripple-color="light"
+                        >
+                            <img src="img/a3.jpg" class="w-100"/>
+                            <a href="#!">
+                                <div
+                                        class="mask"
+                                        style="background-color: rgba(0, 0, 0, 0.4);"
+                                >
+                                    <div
+                                            class="d-flex justify-content-center align-items-center h-100"
+                                    >
+                                        <h4 class="text-white mb-0">
+                                            Luxury hotel: <u>book now</u>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="hover-overlay">
+                                    <div
+                                            class="mask"
+                                            style="background-color: rgba(251, 251, 251, 0.2);"
+                                    ></div>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                    <!-- Sidebar -->
+                </div>
+                {# sidebar #}
+            </div>
+        </div>
+    </main>
+    <!-- Main layout -->
 {% endblock %}

@@ -24,7 +24,7 @@ def home(request):
             Comment.objects.create(
                 name=name,
                 email=sender,
-                message=message
+                message=message,
             )
 
             receivers = ['admin@email.com']
@@ -32,7 +32,7 @@ def home(request):
                 receivers.append(sender)
 
             # send email
-            send_mail(f'Website email - general from {name}', message, sender, receivers)
+            send_mail(f'Comment by {name} - kyleclarkson.ca', message, sender, receivers)
             messages.add_message(request,
                                  messages.SUCCESS,
                                  'Thank you for your email!',

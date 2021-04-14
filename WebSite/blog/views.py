@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.mail import send_mail
+from django.contrib import messages
 
 from taggit.models import Tag
 
-from .models import Post
-# Create your views here.
+from .models import Post, Comment
+from main.forms import CommentForm
 
 
 def blog_list(request, tag_slug=None):
@@ -47,11 +49,49 @@ def blog_list(request, tag_slug=None):
 
 def blog_detail(request, year, month, day, post):
     """ Get specific post using slug. """
-    
-    post = get_object_or_404(Post, slug=post,)
+    # Issue: adding 'day' value when getting post makes post not found.
+    post = get_object_or_404(Post,
+                             slug=post,
+                             status='published',
+                             publish__year=year,
+                             publish__month=month,)
+
+    comment_form = CommentForm()
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+
+        if comment_form.is_valid():
+            name = comment_form.cleaned_data['name']
+            sender = comment_form.cleaned_data['email']
+            message = comment_form.cleaned_data['message']
+
+            # create instance in database.
+            Comment.objects.create(
+                name=name,
+                email=sender,
+                message=message,
+                post=post,
+            )
+
+            receivers = ['admin@email.com']
+            if comment_form.cleaned_data['copy_sent']:
+                receivers.append(sender)
+
+            # send email
+            send_mail(f'Comment by {name} on {post.title} - kyleclarkson.ca', message, sender, receivers)
+            messages.add_message(request,
+                                 messages.SUCCESS,
+                                 'Thank you for your email!',
+                                 extra_tags='bg-success text-white')
+
+            # clear form
+            comment_form = CommentForm()
+
+
 
     context = {
-        'post': post
+        'post': post,
+        'comment_form': comment_form
     }
 
     return render(request,

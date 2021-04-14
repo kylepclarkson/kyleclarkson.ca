@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'taggit',
     'ckeditor',
     'ckeditor_uploader',
+    'django_social_share',
 
     'main.apps.MainConfig',
     'blog.apps.BlogConfig',

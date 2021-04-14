@@ -56,6 +56,10 @@ def blog_detail(request, year, month, day, post):
                              publish__year=year,
                              publish__month=month,)
 
+    # display a few other posts
+    # select randomly.
+    other_posts = Post.objects.exclude(pk=post.pk).order_by('?')[:2]
+
     comment_form = CommentForm()
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
@@ -91,7 +95,8 @@ def blog_detail(request, year, month, day, post):
 
     context = {
         'post': post,
-        'comment_form': comment_form
+        'comment_form': comment_form,
+        'other_posts': other_posts,
     }
 
     return render(request,

@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load social_share %}
+{% load static %}
 
 {% block title %}
     | Blog
@@ -6,15 +8,16 @@
 
 {% block content %}
     {# title #}
-    <div class="p-5 text-center">
+    <div class="p-5 text-center" style="
+            {#background: -webkit-linear-gradient(to right, #D3CCE3, #E9E4F0);  /* Chrome 10-25, Safari 5.1-6 */#}
+            {#background: linear-gradient(to right, #D3CCE3, #E9E4F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */#}
+            ">
         <h1 class="my-1">{{ post.title }}</h1>
     </div>
     {# title #}
-
     <main class="my-4">
         <div class="container">
             <div class="row">
-
                 {# post #}
                 <div class="col-lg-8 mb-4">
                     {# title #}
@@ -45,32 +48,15 @@
                     {# content #}
 
                     {# social share #}
-                    <section id="social" class="border-bottom py-4 mb-2 text-center">
-                        <p><strong>Share with your friends:</strong></p>
-                        <button
-                                type="button"
-                                class="btn btn-primary m-1"
-                                style="background-color: #3b5998;"
-                        >
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
-                        <button
-                                type="button"
-                                class="btn btn-primary m-1"
-                                style="background-color: #55acee;"
-                        >
-                            <i class="fab fa-twitter"></i>
-                        </button>
-                        <button
-                                type="button"
-                                class="btn btn-primary m-1"
-                                style="background-color: #0082ca;"
-                        >
-                            <i class="fab fa-linkedin"></i>
-                        </button>
-                        <button type="button" class="btn btn-primary m-1">
-                            <i class="fas fa-comments mr-2"></i>Add comment
-                        </button>
+                    <section id="social" class="border-bottom py-4 mb-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4><strong>Share with your friends:</strong></h4>
+                            <span class="d-flex flex-row align-items-center bd-highlight">
+                                {% post_to_facebook request.get_full_path %}
+                                {% post_to_twitter request.get_full_path %}
+                                {% post_to_linkedin request.get_full_path %}
+                            </span>
+                        </div>
                     </section>
                     {# social share #}
 
@@ -94,60 +80,24 @@
 
                 {# sidebar #}
                 <div class="col-lg-4 mb-4">
-                    <!-- Sidebar -->
                     <section id="sidebar" class="sticky-top" style="top: 80px;">
-                        <div
-                                class="bg-image ripple mb-4 rounded shadow-2-strong"
-                                data-ripple-color="light"
-                        >
-                            <img src="img/a2.jpg" class="w-100"/>
-                            <a href="#!">
-                                <div
-                                        class="mask"
-                                        style="background-color: rgba(0, 0, 0, 0.4);"
-                                >
-                                    <div
-                                            class="d-flex justify-content-center align-items-center h-100"
-                                    >
-                                        <h4 class="text-white mb-0">
-                                            Only now: <strong><u>best price</u></strong>
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="hover-overlay">
-                                    <div
-                                            class="mask"
-                                            style="background-color: rgba(251, 251, 251, 0.2);"
-                                    ></div>
+                        <h4 class="text-center mb-2">Checkout these other posts</h4>
+                        <!-- Sidebar -->
+                        {% for other_post in other_posts %}
+                            <a href="{{ other_post.get_absolute_url }}" style="text-decoration: none;">
+                                <div class="d-flex align-items-center justify-content-center img img-fluid rounded-3 shadow my-2 p-3"
+                                     style="
+                                             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ other_post.image.url }});
+                                             background-position: center;
+                                             background-repeat: no-repeat;
+                                             background-size: cover;
+                                             position: relative;
+                                             height: 20rem;
+                                             ">
+                                    <h4 class="text-white">{{ other_post.title }}</h4>
                                 </div>
                             </a>
-                        </div>
-                        <div
-                                class="bg-image ripple rounded shadow-2-strong"
-                                data-ripple-color="light"
-                        >
-                            <img src="img/a3.jpg" class="w-100"/>
-                            <a href="#!">
-                                <div
-                                        class="mask"
-                                        style="background-color: rgba(0, 0, 0, 0.4);"
-                                >
-                                    <div
-                                            class="d-flex justify-content-center align-items-center h-100"
-                                    >
-                                        <h4 class="text-white mb-0">
-                                            Luxury hotel: <u>book now</u>
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="hover-overlay">
-                                    <div
-                                            class="mask"
-                                            style="background-color: rgba(251, 251, 251, 0.2);"
-                                    ></div>
-                                </div>
-                            </a>
-                        </div>
+                        {% endfor %}
                     </section>
                     <!-- Sidebar -->
                 </div>

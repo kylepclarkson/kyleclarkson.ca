@@ -7,6 +7,7 @@ from taggit.models import Tag
 
 from .models import Post, Comment
 from main.forms import CommentForm
+from WebSite.settings import seckeys
 
 
 def blog_list(request, tag_slug=None):
@@ -77,12 +78,18 @@ def blog_detail(request, year, month, day, post):
                 post=post,
             )
 
-            receivers = ['admin@email.com']
+            receivers = [seckeys.EMAIL_NOTIFICATION]
             if comment_form.cleaned_data['copy_sent']:
                 receivers.append(sender)
 
-            # send email
-            send_mail(f'Comment by {name} on {post.title} - kyleclarkson.ca', message, sender, receivers)
+            # send email.
+            email_message = f"Hi! Thanks for you comment, here is a copy of it: \n\n=====\n" \
+                            f"{message}\n=====\n\n** This email is not monitored for responses."
+            send_mail(f'Comment by {name} - kyleclarkson.ca',
+                      email_message,
+                      seckeys.EMAIL_HOST_USER,
+                      receivers)
+
             messages.add_message(request,
                                  messages.SUCCESS,
                                  'Thank you for your email!',

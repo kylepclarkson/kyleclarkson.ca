@@ -92,6 +92,16 @@ WSGI_APPLICATION = 'WebSite.wsgi.application'
 #     }
 # }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'kyleclarkson_db_1',
+        'USER': 'kyleclarkson_db',
+        'PASSWORD': 'grabgrab566',
+        'HOST': 'database-1.cluo4d9cjysl.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -129,6 +139,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# === CK editor ===
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
 # === Static files ===
 STATIC_URL = '/static/'
 # STATIC_URL = 'https://us-west-2- kyleclarkson.ca.bucket.s3.amazonaws.com/'
@@ -145,10 +158,21 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media_root/')
 
 
-# === CK editor ===
-CKEDITOR_UPLOAD_PATH = "uploads/"
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# django-storages
+AWS_ACCESS_KEY_ID = 'AKIAY3TMRZ325MZN4IQQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'kyleclarkson.ca.bucket'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_REGION_NAME = 'us-west-2'
+AWS_QUERYSTRING_AUTH = False
+AWS_QUERYSTRING_EXPIRE = 3600
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'

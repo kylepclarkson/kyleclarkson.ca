@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from . import seckeys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -93,14 +94,7 @@ WSGI_APPLICATION = 'WebSite.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kyleclarkson_db_1',
-        'USER': 'kyleclarkson_db',
-        'PASSWORD': 'grabgrab566',
-        'HOST': 'database-1.cluo4d9cjysl.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
-    }
+    'default': seckeys.LIVE_DB_DEFAULT
 }
 
 # Password validation
@@ -164,9 +158,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '_media_root/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # django-storages
-AWS_ACCESS_KEY_ID = 'AKIAY3TMRZ325MZN4IQQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'kyleclarkson.ca.bucket'
+AWS_ACCESS_KEY_ID = seckeys.AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY = seckeys.AWS_SECRET_ACCESS_KEY
+AWS_STORAGE_BUCKET_NAME = seckeys.AWS_STORAGE_BUCKET_NAME
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None

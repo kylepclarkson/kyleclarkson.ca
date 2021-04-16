@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'django_social_share',
+    'storages',
 
     'main.apps.MainConfig',
     'blog.apps.BlogConfig',
@@ -130,6 +131,7 @@ USE_TZ = True
 
 # === Static files ===
 STATIC_URL = '/static/'
+# STATIC_URL = 'https://us-west-2- kyleclarkson.ca.bucket.s3.amazonaws.com/'
 # collect static files here
 STATIC_ROOT = os.path.join(BASE_DIR, '_static_root')
 # search for static files in these locations as well

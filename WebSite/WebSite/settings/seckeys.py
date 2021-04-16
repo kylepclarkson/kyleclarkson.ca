@@ -10,8 +10,8 @@ LIVE_DB_DEFAULT = {
     'PORT': '5432',
 }
 
-AWS_ACCESS_KEY_ID = 'AKIAY3TMRZ32UDPOPMRM'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAY3TMRZ325MZN4IQQ'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'kyleclarkson.ca.bucket'
 
 # django-storages
@@ -26,3 +26,4 @@ EMAIL_HOST_PASSWORD = 'PhaseTwo9'
 
 # my email to received notifications.
 EMAIL_NOTIFICATION = 'contact@kyleclarkson.ca'
+

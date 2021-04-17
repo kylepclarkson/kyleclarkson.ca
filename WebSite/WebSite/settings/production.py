@@ -2,7 +2,7 @@ from .base import *
 from . import seckeys
 
 # DEBUG = False
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',

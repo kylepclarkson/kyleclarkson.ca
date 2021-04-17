@@ -1,6 +1,9 @@
 /* Social Icons */
 
 /* footer social icons */
+body {
+    font-family: 'Roboto Slab', serif;
+}
 
 .social-network {
     text-align: center;

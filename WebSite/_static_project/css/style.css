@@ -5,6 +5,15 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+p {
+    font-size: 30px;
+    font-size: 3.5vw;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
 .social-network {
     text-align: center;
 }

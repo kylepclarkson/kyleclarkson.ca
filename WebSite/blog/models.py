@@ -29,7 +29,7 @@ class Post(models.Model):
     title = models.CharField(max_length=400)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     excerpt = models.TextField() # sort bit describing article.
-    image = models.ImageField(upload_to='blog/%Y/%m/%d', default='no_image.png')
+    image = models.ImageField(upload_to='blog/%Y/%m/%d', default='blog/no_image.png')
     body = fields.RichTextUploadingField(blank=True, null=True)
     publish = models.DateTimeField(default=timezone.now)  # when post was published.
     created = models.DateTimeField(auto_now_add=True)  # when the post was first created.

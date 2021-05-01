@@ -27,8 +27,14 @@ SECRET_KEY = 'django-insecure-4wspxh=5bbqn!)8$(2x@7uu6y5w=tkih($d5np%@ayp$!cmh5+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '52.26.50.93',
+    'www.kyleclarkson.ca',
+    'kyleclarkson.ca',
+    'website-env.eba-2n3daxun.us-west-2.elasticbeanstalk.com',
+]
 
 # Application definition
 
@@ -137,8 +143,8 @@ USE_TZ = True
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # === Static files ===
-STATIC_URL = '/static/'
-# STATIC_URL = 'https://us-west-2- kyleclarkson.ca.bucket.s3.amazonaws.com/'
+# STATIC_URL = '/static/'
+STATIC_URL = 'https://us-west-2- kyleclarkson.ca.bucket.s3.amazonaws.com/'
 # collect static files here
 STATIC_ROOT = os.path.join(BASE_DIR, '_static_root')
 # search for static files in these locations as well

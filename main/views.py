@@ -33,7 +33,7 @@ def home(request):
                 receivers.append(sender)
 
             # send email.
-            email_message = f"Hi! Thanks for you comment, here is a copy of it: \n\n=====\n" \
+            email_message = f"Hi there, thanks for your comment! here is a copy of it: \n\n=====\n" \
                             f"{message}\n=====\n\n** This email is not monitored for responses."
 
             send_mail(f'Comment by {name} - kyleclarkson.ca',

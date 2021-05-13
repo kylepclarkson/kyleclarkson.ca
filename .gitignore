@@ -12,3 +12,6 @@ WebSite/settings/seckeys.py
 _static_project/*
 _static_root/*
 _media_root/*
+
+# venv
+.env/*

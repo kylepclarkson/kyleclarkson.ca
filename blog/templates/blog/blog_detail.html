@@ -52,7 +52,7 @@
                     {# content #}
 
                     {# social share #}
-                    <section id="social" class="border-bottom py-4 mb-2">
+                    {% comment %} <section id="social" class="border-bottom py-4 mb-2">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4><strong>Share with your friends:</strong></h4>
                             <span class="d-flex flex-row align-items-center bd-highlight">
@@ -61,10 +61,23 @@
                                 {% post_to_linkedin request.get_full_path %}
                             </span>
                         </div>
-                    </section>
+                    </section> {% endcomment %}
                     {# social share #}
 
                     {# reply form #}
+                    <section id="reply-form" class="pt-4 mb-4">
+                        <p class="text-center">
+                            <strong>Reply to this article</strong>
+                        </p>
+                        <form class="needs-validation" method="POST">
+                            {% csrf_token %}
+                            {{ comment_form }}
+                            <input id="form-submit-btn"
+                                   class="d-flex ms-auto btn btn-primary mt-2"
+                                   type="submit"
+                                   value="Send">
+                        </form>
+                    </section>
                     {# reply form #}
                 </div>
                 {# post #}

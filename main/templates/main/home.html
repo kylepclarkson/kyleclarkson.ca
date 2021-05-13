@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+    {# === Hero === #}
+    <div class="d-flex align-items-center justify-content-center min-vh-100" style="
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({% static '/images/hero-bg.jpg' %});
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            ">
+        <div class="text-white text-center">
+            <h1 class="mb-3">Welcome, boozhoo.</h1>
+            <h4 class="mb-3 mx-5">I'm Kyle and, among other things, I'm a developer.</h4>
+            <a class="btn btn-outline-light btn-lg m-1" href="#about" role="button">My skills</a>
+            <a class="btn btn-outline-light btn-lg m-1" href="#projects" role="button">Projects</a>
+        </div>
+    </div>
+    {# === Hero === #}
+
+    <main>
+        <div class="container-fluid" style="background: whitesmoke">
+            <div class="container">
+                {# === About === #}
+                <section id="about" class="text-center" style="padding-top: 50px;">
+                    <h3 class="py-5"><strong>A little about me.</strong></h3>
+                    <div class="row">
+                        {# col 1/2 #}
+                        <div class="col-md-6 mb-4">
+                            <img src="{% static 'images/kyle-hs.png' %}" alt="its me!"
+                                 class="img rounded-circle shadow-1-strong mb-4"
+                                 style="width: 300px; height: 300px;"
+                            >
+                            <p>
+                                I recently finished a Master's of Computer Science degree at the University of British
+                                Columbia and currently looking for work as a developer in Vancouver, BC! I also hike,
+                                cycle, and play guitar when I can find the time.
+                                <a href="{% url 'main:about' %}">More</a>
+                            </p>
+                            <a href="https://www.instagram.com/kylepclarkson/"
+                               target="_blank"
+                               style="text-decoration: none;">
+                                <i class="fab fa-instagram btn btn-lg"></i>
+                            </a>
+                            <a href="https://github.com/kylepclarkson"
+                               target="_blank"
+                               style="text-decoration: none;">
+                                <i class="fab fa-github btn btn-lg"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kyle-clarkson-425bb5164/"
+                               target="_blank"
+                               style="text-decoration: none;">
+                                <i class="fab fa-linkedin btn btn-lg"></i>
+                            </a>
+                        </div>
+                        {# col 1/2 #}
+
+                        <div class="col-md-6 mb-4">
+                            {# row #}
+                            <h4><strong><u>Proficient</u></strong></h4>
+                            <div class="row">
+                                <div class="col-sm-6 mb-4">
+                                    <i class="fab fa-java fa-3x m-2"></i>
+                                    <p>Java</p>
+                                </div>
+                                <div class="col-sm-6 mb-4">
+                                    <i class="fab fa-python fa-3x m-2"></i>
+                                    <p>Python</p>
+                                </div>
+                            </div>
+
+                            {# row #}
+                            <h4><strong><u>Used A Lot</u></strong></h4>
+                            <div class="row">
+                                <div class="col-sm-4 mb-4">
+                                    <i class="fab fa-html5 fa-3x m-2"></i>
+                                    <p>Html</p>
+                                </div>
+                                <div class="col-sm-4 mb-4">
+                                    <i class="fab fa-bootstrap fa-3x m-2"></i>
+                                    <p>Bootstrap</p>
+                                </div>
+                                <div class="col-sm-4 mb-4">
+                                    <img class="fab fa-3x mt-3" src="{% static 'images/django.svg' %}" alt="">
+                                    <p class="mt-3">Django</p>
+                                </div>
+                            </div>
+
+                            {# row #}
+                            <h4><strong><u>Learning</u></strong></h4>
+                            <div class="row">
+                                <div class="col-sm-4 mb-4">
+                                    <i class="fab fa-react fa-3x m-2"></i>
+                                    <p>React</p>
+                                </div>
+                                <div class="col-sm-4 mb-4">
+                                    <i class="fab fa-js fa-3x m-2"></i>
+                                    <p>JavaScript</p>
+                                </div>
+                                <div class="col-sm-4 mb-4">
+                                    <i class="fab fa-node fa-3x m-2"></i>
+                                    <p>NodeJS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {# === About === #}
+            </div>
+        </div>
+
+        {# === Projects === #}
+        <div class="container-fluid" style="background: whitesmoke;">
+            <div class="container">
+                <section id="projects" class="text-center" style="padding-top: 50px;">
+                    <h3 class="my-5"><strong>Some of my projects.</strong></h3>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <div class="card h-100 shadow">
+                                {# image #}
+                                <div class="p-4 pb-2">
+                                    <img src="{% static 'images/covid.svg' %}"
+                                        class="img-fluid rounded-3"
+                                        style="height: 200px; width: 200px">
+                                </div>
+                                {# body #}
+                                <div class="card-body d-flex flex-column justify-content-end">
+                                    <div class="mt-auto pb-2">
+                                        <h5 class="card-title">Covid In Canada</h5>
+                                        <p class="card-text">
+                                        A React app that displays covid case counts and vaccine distribution in Canada
+                                        and its provinces using data from the
+                                        <a href="https://opencovid.ca/" target="_blank">open covid</a> API.
+                                        Hosted using AWS' S3.
+                                        </p>
+                                        <a href="http://covidincanada.kyleclarkson.ca/"
+                                           target="_blank"
+                                           class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <div class="card h-100 shadow">
+                                {# image #}
+                                <div class="p-4">
+                                    <img src="{% static 'images/logo.svg' %}"
+                                         class="img-fluid mt-5">
+                                </div>
+                                {# body #}
+                                <div class="card-body d-flex flex-column justify-content-end">
+                                    <div class="mt-auto pb-2">
+                                        <h5 class="card-title">This Website</h5>
+                                        <p class="card-text">
+                                            I created this website using Django and Bootstrap! It is hosted using AWS'
+                                            Elastic Beanstalk and database services.
+                                        </p>
+                                        <a href="#"
+                                           target="_blank"
+                                           class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <div class="card h-100 shadow">
+                                {# image #}
+                                <!-- Photo by RetroSupply on Unsplash -->
+                                <div class="p-4">
+                                    <img src="{% static 'images/blog_image.jpg' %}" class="img-fluid rounded-3">
+                                </div>
+                                {# body #}
+                                <div class="card-body d-flex flex-column justify-content-end">
+                                    <div class="mt-auto pb-2">
+                                        <h5 class="card-title">My Blog</h5>
+                                        <p class="card-text">
+                                            Check out my blog were I write about several things, from events occurring
+                                            in my life to learning new things such as software techniques, frameworks,
+                                            and
+                                            more!
+                                        </p>
+                                        <a href="{% url 'blog:blog_list' %}"
+                                           target="_blank"
+                                           class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+{#                        <div class="col-lg-4 col-md-12 mb-4 card-group">#}
+{#                            <div class="card h-100 shadow">#}
+                                {# image #}
+{#                                <div class="p-4 pb-2">#}
+{#                                    <img src="{% static 'images/group_hike.jpg' %}"#}
+{#                                         class="img-fluid rounded-3">#}
+{#                                </div>#}
+                                {# body #}
+{#                                <div class="card-body">#}
+{#                                    <h5 class="card-title">HikeNote</h5>#}
+{#                                    <p class="card-text">#}
+{#                                        A web app developed in Django for maintaining an updated itinerary of a trip#}
+{#                                        which is relayed to a trusted contact if a user fails to check-in at the#}
+{#                                        end of the trip.#}
+{#                                    </p>#}
+{#                                    <a href="https://kyleclarkson-hikenote.herokuapp.com/"#}
+{#                                       target="_blank"#}
+{#                                       class="btn btn-primary">View</a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+                    </div>
+                </section>
+            </div>
+        </div>
+        {# === Projects === #}
+
+        <div class="container-fluid" style="background: whitesmoke;">
+            <div class="container">
+                
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{# reply form #}
+                    <section id="reply-form" class="pt-4 mb-4">
+                        <p class="text-center">
+                            <strong>Reply to this article</strong>
+                        </p>
+                        <form class="needs-validation" method="POST">
+                            {% csrf_token %}
+                            {{ comment_form }}
+                            <input id="form-submit-btn"
+                                   class="d-flex ms-auto btn btn-primary mt-2"
+                                   type="submit"
+                                   value="Send">
+                        </form>
+                    </section>
+                    {# reply form #}
+
+
+                    {# === Contact Form === #}
+                <section id="contact" style="padding-top: 50px">
+                    <div class="text-center">
+                        <h3><strong>Contact me.</strong></h3>
+                        <p class="mb-5">See something you like? Send me a message using the form!</p>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 mb-5">
+                            <form class="needs-validation" method="POST">
+                                {% csrf_token %}
+                                {{ comment_form }}
+                                <input id="form-submit-btn" class="d-flex ms-auto btn btn-primary mt-2" type="submit"
+                                       value="Send">
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                {# === Contact Form === #}

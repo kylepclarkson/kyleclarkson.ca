@@ -1,3 +1,14 @@
 
-/WebSite/WebSite/settings/seckeys.py
-/WebSite/settings/seckeys.py
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.ebextensions
+
+# Secret values
+WebSite/settings/seckeys.py
+
+# static files (old)
+_static_project/*
+_static_root/*
+_media_root/*

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4wspxh=5bbqn!)8$(2x@7uu6y5w=tkih($d5np%@ayp$!cmh5+'
+SECRET_KEY = seckeys.DJANGO_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,10 +31,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    '52.26.50.93',
-    'www.kyleclarkson.ca',
-    'kyleclarkson.ca',
-    'website-env.eba-2n3daxun.us-west-2.elasticbeanstalk.com',
+    # 'www.kyleclarkson.ca',
+    # 'kyleclarkson.ca',
+    # 'website-env.eba-2n3daxun.us-west-2.elasticbeanstalk.com',
 ]
 
 # Application definition

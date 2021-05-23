@@ -31,9 +31,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    # 'www.kyleclarkson.ca',
-    # 'kyleclarkson.ca',
-    # 'website-env.eba-2n3daxun.us-west-2.elasticbeanstalk.com',
+    'website-env.eba-wivchxus.us-west-2.elasticbeanstalk.com'
+    'www.kyleclarkson.ca',
+    'kyleclarkson.ca',
 ]
 
 # Application definition

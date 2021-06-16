@@ -27,7 +27,7 @@
             <div class="container">
                 {# === About === #}
                 <section id="about" class="text-center" style="padding-top: 50px;">
-                    <h3 class="py-5"><strong>A little about me.</strong></h3>
+                    <h3 class="mb-3"><strong>A little about me.</strong></h3>
                     <div class="row">
                         {# col 1/2 #}
                         <div class="col-md-6 mb-4">
@@ -85,6 +85,10 @@
                                     <p>Bootstrap</p>
                                 </div>
                                 <div class="col-sm-4 mb-4">
+                                    <i class="fab fa-js fa-3x m-2"></i>
+                                    <p>JavaScript</p>
+                                </div>
+                                <div class="col-sm-12 mb-4">
                                     <img class="fab fa-3x mt-3" src="{% static 'images/django.svg' %}" alt="">
                                     <p class="mt-3">Django</p>
                                 </div>
@@ -93,15 +97,11 @@
                             {# row #}
                             <h4><strong><u>Learning</u></strong></h4>
                             <div class="row">
-                                <div class="col-sm-4 mb-4">
+                                <div class="col-sm-6 mb-4">
                                     <i class="fab fa-react fa-3x m-2"></i>
                                     <p>React</p>
                                 </div>
-                                <div class="col-sm-4 mb-4">
-                                    <i class="fab fa-js fa-3x m-2"></i>
-                                    <p>JavaScript</p>
-                                </div>
-                                <div class="col-sm-4 mb-4">
+                                <div class="col-sm-6 mb-2">
                                     <i class="fab fa-node fa-3x m-2"></i>
                                     <p>NodeJS</p>
                                 </div>
@@ -117,7 +117,8 @@
         <div class="container-fluid" style="background: whitesmoke;">
             <div class="container">
                 <section id="projects" class="text-center" style="padding-top: 50px;">
-                    <h3 class="my-5"><strong>Some of my projects.</strong></h3>
+                    <h3 class="mt-3"><strong>Some of my projects.</strong></h3>
+                    <p class="my-2">See more under the <a href="{% url 'main:projects' %}">projects tab</a></p>
                     <div class="row">
                         <div class="col-lg-4 col-md-12 mb-4">
                             <div class="card h-100 shadow">
